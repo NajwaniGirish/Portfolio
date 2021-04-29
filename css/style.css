@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+:root {
+  --Primary: #102048;;
+  --secondary: #708CD5;
+	--light-heading: #eee;
+}
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: 'Poppins', sans-serif;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	margin: 2rem;
+}
+header {
+	width: 100%;
+	height: 100vh;
+	background-image: url('../images/lappy-1.svg'), url('../images/5026563.jpg');
+	background-size: 40%, 100%, cover;
+	background-repeat: no-repeat, no-repeat;
+	background-position: right, center;
+	color: var(--Primary);
+	clip-path: polygon(50% 0%, 100% 1%, 100% 75%, 50% 100%, 0% 75%, 0 0);
+	-webkit-clip-path: polygon(50% 0%, 100% 1%, 100% 85%, 50% 100%, 0% 85%, 0 0);
+}
+
+nav {
+	padding: 2rem;
+	width: 100%;
+	height: 7rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.menu {
+	margin-top: 1rem;
+	margin-right: 6rem;
+}
+.menu a {
+	color: var(--Primary);
+	font-size: 2rem;
+	padding: 1rem;
+	margin: 0.5rem;
+}
+.menu a:hover {
+	border-radius: 1rem;
+	background-color: var(--secondary);
+}
+
+.main-text {
+	font-size: 4rem;
+	margin-left: 7rem;
+	margin-top: 15rem;
+}
+
+/* About me section */
+
+#about {
+	padding: 10rem 5rem;
+}
+
+.section-info {
+	text-align: center;
+	color: var(--Primary);
+}
+
+.section-info h1 {
+	font-size: 5rem;
+}
+
+.about-row {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.about-left-col {
+	flex-basis: 50%;
+}
+
+.about-left-col img {
+	width: 100%;
+	height: 90vh;
+	padding: 5rem;
+}
+
+.about-right-col {
+	flex-basis: 50%;
+	padding: 5rem;
+	font-size: 2rem;
+}
+
+.c-btn {
+	margin: 2rem 0;
+	background-color: var(--secondary);
+	color: #fff;
+	border: none;
+	outline: none;
+	padding: 1rem;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+/* Skill sections */
+
+#skills {
+	padding: 10rem 5rem;
+	background: var(--Primary);
+	color:  rgb(45, 54, 54);
+}
+
+#skills .section-info h1{
+	color: var(--light-heading);
+}
+
+.skill-bars {
+	padding: 25px 30px;
+	width: 600px;
+	background-color: var(--secondary);
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+	margin: 3rem auto;
+}
+
+.skill-bars .bar {
+	margin: 20px 0;
+}
+.skill-bars .bar:first-child {
+	margin-top: 0px;
+}
+.skill-bars .bar .info {
+	margin-bottom: 5px;
+}
+.skill-bars .bar .info span {
+	font-weight: 500;
+	font-size: 17px;
+	opacity: 0;
+	animation: showText 0.5s 1s linear forwards;
+}
+@keyframes showText {
+	100% {
+		opacity: 1;
+	}
+}
+.skill-bars .bar .progress-line {
+	height: 10px;
+	width: 100%;
+
+	position: relative;
+	transform: scaleX(0);
+	transform-origin: left;
+	border-radius: 10px;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05), 0 1px rgba(45, 54, 54,0.5);
+	animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+@keyframes animate {
+	100% {
+		transform: scaleX(1);
+	}
+}
+.bar .progress-line span {
+	height: 100%;
+	position: absolute;
+	border-radius: 10px;
+	transform: scaleX(0);
+	transform-origin: left;
+	background: #fff;
+	animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+.bar .progress-line.html span {
+	width: 90%;
+}
+.bar .progress-line.css span {
+	width: 75%;
+}
+.bar .progress-line.python span {
+	width: 80%;
+}
+.bar .progress-line.js span {
+	width: 70%;
+}
+
+.bar .progress-line.mysql span {
+	width: 70%;
+}
+.progress-line span::before {
+	position: absolute;
+	content: '';
+	top: -10px;
+	right: 0;
+	height: 0;
+	width: 0;
+	border: 7px solid transparent;
+	border-bottom-width: 0px;
+	border-right-width: 0px;
+	border-top-color: rgb(0, 0, 0);
+	opacity: 0;
+	animation: showText2 0.5s 1.5s linear forwards;
+}
+.progress-line span::after {
+	position: absolute;
+	top: -28px;
+	right: 0;
+	font-weight: 500;
+	background: rgb(45, 54, 54);
+	color: #fff;
+	padding: 1px 8px;
+	font-size: 12px;
+	border-radius: 3px;
+	opacity: 0;
+	animation: showText2 0.5s 1.5s linear forwards;
+}
+@keyframes showText2 {
+	100% {
+		opacity: 1;
+	}
+}
+.progress-line.html span::after {
+	content: '90%';
+}
+.progress-line.css span::after {
+	content: '75%';
+}
+.progress-line.js span::after {
+	content: '70%';
+}
+.progress-line.python span::after {
+	content: '80%';
+}
+.progress-line.mysql span::after {
+	content: '70%';
+}
+
+/* Projects Sections */
+
+#projects {
+	padding: 10rem 5rem;
+}
+
+.project-info {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.project-box {
+	flex-basis: 25%;
+	margin: 3rem 3rem;
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+	border-radius: 1rem;
+	padding: 2rem;
+	overflow: hidden;
+	text-align: center;
+}
+
+.project-box img {
+	width: 100%;
+	height: 20rem;
+	border: 1rem;
+}
+
+.project-box h2 {
+	font-size: 2rem;
+	
+	margin: 1rem;
+}
+
+.project-box p {
+	font-size: 1.2rem;
+}
+/* .skill-bars {
+	padding: 25px 30px;
+	width: 600px;
+	background-color: aquamarine;
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+	margin: 3rem auto;
+} */
+
+.project-btn {
+	margin: 2rem auto
+	width: 100%;
+	text-align: center;
+}
+.project-btn button{
+	border-radius: 1rem;
+	cursor: pointer;
+}
+
+
+/* Contact sections */
+
+#contact{
+	background: var(--Primary);
+	color: #fff;
+	padding: 10rem 5rem;
+}
+
+#contact .section-info {
+	color: #eee;
+}
+
+ul {
+
+  display: flex;
+  margin: 1rem;
+	justify-content: center;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li a {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 80px;
+  font-size: 35px;
+  margin: 0 10px;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #fff;
+  z-index: 1;
+}
+
+ul li a .icon {
+  position: relative;
+  color: #262626;
+  transition: .5s;
+  z-index: 3;
+}
+
+ul li a:hover .icon {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+ul li a:before {
+  content: "";
+	position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: .5s;
+  z-index: 2;
+}
+
+ul li a:hover:before {
+  top: 0;
+}
+
+ul li:nth-child(1) a:before{
+  background: #333;
+}
+
+ul li:nth-child(2) a:before{
+  background:  #ff3333;
+}
+
+ul li:nth-child(3) a:before {
+  background: #0077b5;
+}
